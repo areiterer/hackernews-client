@@ -8,7 +8,7 @@ export default function Story(props) {
   const item = props.item;
   return (
     <Wrapper>
-      <Header title={item.title} rank={props.rank} />
+      <Header url={item.url} title={item.title} rank={props.rank} />
       <Footer username={item.by} score={item.score} timestamp={item.time} />
     </Wrapper>
   );

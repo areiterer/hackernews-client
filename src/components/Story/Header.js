@@ -7,20 +7,22 @@ import {
   SourceLink
 } from "./Styles";
 
-function Header(props) {
+export default function Header(props) {
+  const regex = /(?:https?:\/\/)?(?:www\.)?(.*?)\//;
+  let match = regex.exec(props.url);
+  let sourceUrl = match[1] ? match[1] : "#";
+
   return (
     <HeaderWrapper>
       <RankContainer>
         {props.rank}.
       </RankContainer>
-      <Title href="www.google.at">
+      <Title href={props.url}>
         {props.title}
       </Title>
       <SourceContainer>
-        (<SourceLink href="#">getdropbox.com</SourceLink>)
+        (<SourceLink href={"http://" + sourceUrl}>{sourceUrl}</SourceLink>)
       </SourceContainer>
     </HeaderWrapper>
   );
 }
-
-export default Header;
