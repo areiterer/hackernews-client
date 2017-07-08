@@ -2,7 +2,7 @@ This project is a ReactJS client for HackerNews stories. Since the [API](https:/
 it display the newest stories
 
 ## Roadmap
-* [ ] List of stories (static)
+* [x] List of stories (static)
 * [ ] Get the content from HackerNews API
 * [ ] Paging
 * [ ] Show discussions/comments
