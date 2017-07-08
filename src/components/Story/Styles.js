@@ -16,7 +16,9 @@ export const RankContainer = styled.div`
   color: #828282;
 `;
 
-export const Title = styled.a`
+export const Title = styled.a.attrs({
+  target: "_blank"
+})`
   color: #000000;
   text-decoration: none;
   margin: 0px 2px;
@@ -32,7 +34,9 @@ export const SourceContainer = styled.span`
   color: #828282;
 `;
 
-export const SourceLink = styled.a`
+export const SourceLink = styled.a.attrs({
+  target: "_blank"
+})`
   color: #828282;
   text-decoration: none;
   margin: 0px 1px;
