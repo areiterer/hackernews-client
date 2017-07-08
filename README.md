@@ -7,5 +7,10 @@ it display the newest stories
 * [ ] Paging
 * [ ] Show discussions/comments
 
+## Try out 
+If you want to try it out, just clone the repository and use
+```npm -i
+npm start```
+
 ## Libraries used
 [styled-components](www.styled-components.com)
