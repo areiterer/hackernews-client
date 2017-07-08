@@ -9,7 +9,9 @@ it display the newest stories
 
 ## Try out 
 If you want to try it out, just clone the repository and use
-```npm -i
+
+```
+npm -i
 npm start
 ```
 
