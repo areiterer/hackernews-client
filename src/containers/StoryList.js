@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Story from "../components/Story";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`margin: 20px;`;
 
 export default class StoryList extends Component {
   render() {
