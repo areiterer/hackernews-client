@@ -1,26 +1,27 @@
 import React from "react";
-import { FooterWrapper, FooterLinkItem, FooterTextItem } from "./Styles";
+import PropTypes from "prop-types";
 
+import { FooterWrapper, FooterLinkItem } from "./Styles";
 import * as utils from "../../utils";
 
 export default function Footer(props) {
   const userUrl = utils.getUserUrl(props.username);
+  const itemUrl = utils.getItemUrl(props.itemId);
 
   return (
     <FooterWrapper>
-      <FooterTextItem>
-        {props.score} point by
-        <FooterLinkItem href={userUrl}>{props.username}</FooterLinkItem>
-        <FooterLinkItem href="#">8 minutes ago</FooterLinkItem>
-        |
-        <FooterLinkItem href="#">hide</FooterLinkItem>
-        |
-        <FooterLinkItem href="#">past</FooterLinkItem>
-        |
-        <FooterLinkItem href="#">web</FooterLinkItem>
-        |
-        <FooterLinkItem href="#">discuss</FooterLinkItem>
-      </FooterTextItem>
+      {props.score} point by
+      <FooterLinkItem href={userUrl}>{props.username}</FooterLinkItem>
+      <FooterLinkItem href="#">8 minutes ago</FooterLinkItem>
+      |
+      <FooterLinkItem href={itemUrl}>view on HackerNews</FooterLinkItem>
     </FooterWrapper>
   );
 }
+
+Footer.propTypes = {
+  username: PropTypes.string.isRequired,
+  itemId: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
+  timestamp: PropTypes.number.isRequired
+};

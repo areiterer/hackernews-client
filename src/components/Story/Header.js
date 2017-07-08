@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+import * as utils from "../../utils";
+
 import {
   HeaderWrapper,
   RankContainer,
@@ -8,9 +11,7 @@ import {
 } from "./Styles";
 
 export default function Header(props) {
-  const regex = /(?:https?:\/\/)?(?:www\.)?(.*?)\//;
-  let match = regex.exec(props.url);
-  let sourceUrl = match[1] ? match[1] : "#";
+  let sourceUrl = utils.getSourceUrl(props.url);
 
   return (
     <HeaderWrapper>
@@ -26,3 +27,9 @@ export default function Header(props) {
     </HeaderWrapper>
   );
 }
+
+Header.propTypes = {
+  rank: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};

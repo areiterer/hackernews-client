@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import Story from "../components/Story";
@@ -17,3 +18,7 @@ export default class StoryList extends Component {
     );
   }
 }
+
+StoryList.propTypes = {
+  items: PropTypes.array.isRequired
+};
