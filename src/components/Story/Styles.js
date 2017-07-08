@@ -53,7 +53,9 @@ export const FooterWrapper = styled.div`
 
 export const FooterTextItem = styled.span``;
 
-export const FooterLinkItem = styled.a`
+export const FooterLinkItem = styled.a.attrs({
+  target: "_blank"
+})`
   color: #828282;
   text-decoration: none;
   margin: 0px 3px;
