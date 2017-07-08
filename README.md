@@ -10,7 +10,8 @@ it display the newest stories
 ## Try out 
 If you want to try it out, just clone the repository and use
 ```npm -i
-npm start```
+npm start
+```
 
 ## Libraries used
 [styled-components](www.styled-components.com)
