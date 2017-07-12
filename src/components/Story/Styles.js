@@ -51,7 +51,7 @@ export const FooterWrapper = styled.div`
   margin: 0;
 `;
 
-export const FooterLinkItem = styled.a.attrs({
+export const FooterLink = styled.a.attrs({
   target: "_blank"
 })`
   color: #828282;

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { FooterWrapper, FooterLinkItem } from "./Styles";
+import { FooterWrapper, FooterLink } from "./Styles";
 import * as utils from "../../utils";
 
 export default function Footer(props) {
@@ -11,10 +11,11 @@ export default function Footer(props) {
   return (
     <FooterWrapper>
       {props.score} point by
-      <FooterLinkItem href={userUrl}>{props.username}</FooterLinkItem>
-      <FooterLinkItem href="#">8 minutes ago</FooterLinkItem>
+      <FooterLink href={userUrl}>{props.username}</FooterLink>
       |
-      <FooterLinkItem href={itemUrl}>view on HackerNews</FooterLinkItem>
+      <FooterLink href="#">8 minutes ago</FooterLink>
+      |
+      <FooterLink href={itemUrl}>view on HackerNews</FooterLink>
     </FooterWrapper>
   );
 }
