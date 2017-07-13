@@ -16,4 +16,4 @@ npm start
 ```
 
 ## Libraries used
-[styled-components](www.styled-components.com)
+[styled-components](https://www.styled-components.com)
