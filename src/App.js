@@ -35,7 +35,6 @@ class App extends Component {
     const rank = index + 1;
     return new Promise(resolve => {
       Api.fetch(`/item/${id}`, {
-        context: this,
         then(data) {
           let item = data;
           // add the rank since it does not exist yet
@@ -49,7 +48,6 @@ class App extends Component {
   componentDidMount() {
     Api.fetch(`/newstories`, {
       context: this,
-      asArray: true,
       then(storyIds) {
         this.fetchNewStories(storyIds);
       }
