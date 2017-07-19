@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { injectGlobal } from "styled-components";
-import * as api from "./api";
 
+import Api from "./api";
 import StoryList from "./containers/StoryList";
 
 // eslint-disable-next-line no-unused-expressions
@@ -16,17 +16,48 @@ body {
 
 class App extends Component {
   state = {
-    stories: []
+    newStories: []
   };
 
-  componentWillMount() {
-    const fetchedStories = api.stories;
+  fetchNewStories(storyIds) {
+    let actions = storyIds.slice(0, 30).map(this.fetchSingleStory);
+    let results = Promise.all(actions);
+    results.then(data =>
+      this.setState(
+        Object.assign({}, this.state, {
+          newStories: data
+        })
+      )
+    );
+  }
 
-    this.setState(Object.assign({}, this.state, { stories: fetchedStories }));
+  fetchSingleStory(id, index) {
+    const rank = index + 1;
+    return new Promise(resolve => {
+      Api.fetch(`/item/${id}`, {
+        context: this,
+        then(data) {
+          let item = data;
+          // add the rank since it does not exist yet
+          item.rank = rank;
+          resolve(item);
+        }
+      });
+    });
+  }
+
+  componentDidMount() {
+    Api.fetch(`/newstories`, {
+      context: this,
+      asArray: true,
+      then(storyIds) {
+        this.fetchNewStories(storyIds);
+      }
+    });
   }
 
   render() {
-    return <StoryList items={this.state.stories} />;
+    return <StoryList items={this.state.newStories} />;
   }
 }
 

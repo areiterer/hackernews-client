@@ -9,11 +9,16 @@ const Wrapper = styled.div`margin: 20px;`;
 export default class StoryList extends Component {
   render() {
     const items = this.props.items;
+
+    if (items.length > 0) {
+      return this.renderList(items);
+    } else return <div>Loading...</div>;
+  }
+
+  renderList(items) {
     return (
       <Wrapper>
-        {items.map((item, i) =>
-          <Story key={item.id} item={item} rank={i + 1} />
-        )}
+        {items.map((item, i) => <Story key={item.id} item={item} />)}
       </Wrapper>
     );
   }

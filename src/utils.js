@@ -9,12 +9,15 @@ export function getUserUrl(username) {
 export function getItemUrl(itemId) {
   if (!itemId) return "#";
 
-  return `${baseSiteUrl}/story?id=${itemId}`;
+  return `${baseSiteUrl}/item?id=${itemId}`;
 }
 
 export function getSourceUrl(url) {
   const regex = /(?:https?:\/\/)?(?:www\.)?(.*?)\//;
   let match = regex.exec(url);
+
+  if (!match) return "";
+
   let sourceUrl = match[1] ? match[1] : "#";
 
   return sourceUrl;

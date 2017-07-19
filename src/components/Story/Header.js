@@ -11,14 +11,21 @@ import {
 } from "./Styles";
 
 export default function Header(props) {
-  let sourceUrl = utils.getSourceUrl(props.url);
+  let url = props.url;
+  let sourceUrl;
+
+  if (!url) {
+    url = utils.getItemUrl(props.itemId);
+  }
+
+  sourceUrl = utils.getSourceUrl(url);
 
   return (
     <HeaderWrapper>
       <RankContainer>
         {props.rank}.
       </RankContainer>
-      <Title href={props.url}>
+      <Title href={url}>
         {props.title}
       </Title>
       <SourceContainer>
@@ -29,7 +36,8 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
+  itemId: PropTypes.number.isRequired,
   rank: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string
 };
