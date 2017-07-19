@@ -3,7 +3,7 @@ it display the newest stories
 
 ## Roadmap
 * [x] List of stories (static)
-* [ ] Get the content from HackerNews API
+* [x] Get the content from HackerNews API
 * [ ] Paging
 * [ ] Show discussions/comments
 
