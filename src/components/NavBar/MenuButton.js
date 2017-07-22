@@ -9,9 +9,12 @@ const MenuButton = styled(StyledLink).attrs({
   width: null
 })`
   height: 16px;
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
   display: block;
   line-height: 14px;
+  cursor: pointer;
 
   &:hover {
     background: none;

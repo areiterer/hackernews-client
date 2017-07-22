@@ -17,3 +17,15 @@ export const desktop = inner => css`
     ${inner}
   }
 `;
+
+export const maxPhone = inner => css`
+  @media only screen and (max-width : ${768 / 16}em) {
+    ${inner}
+  }
+`;
+
+export const maxTablet = inner => css`
+  @media only screen and (max-width : ${992 / 16}em) {
+    ${inner}
+  }
+`;
