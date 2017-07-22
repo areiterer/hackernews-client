@@ -14,13 +14,27 @@ body {
 }
 `;
 
+function fetchSingleStory(id, index) {
+  const rank = index + 1;
+  return new Promise(resolve => {
+    Api.fetch(`/item/${id}`, {
+      then(data) {
+        let item = data;
+        // add the rank since it does not exist yet
+        item.rank = rank;
+        resolve(item);
+      }
+    });
+  });
+}
+
 class App extends Component {
   state = {
     newStories: []
   };
 
   fetchNewStories(storyIds) {
-    let actions = storyIds.slice(0, 30).map(this.fetchSingleStory);
+    let actions = storyIds.slice(0, 30).map(fetchSingleStory);
     let results = Promise.all(actions);
     results.then(data =>
       this.setState(
@@ -29,20 +43,6 @@ class App extends Component {
         })
       )
     );
-  }
-
-  fetchSingleStory(id, index) {
-    const rank = index + 1;
-    return new Promise(resolve => {
-      Api.fetch(`/item/${id}`, {
-        then(data) {
-          let item = data;
-          // add the rank since it does not exist yet
-          item.rank = rank;
-          resolve(item);
-        }
-      });
-    });
   }
 
   componentDidMount() {
