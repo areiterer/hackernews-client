@@ -16,6 +16,6 @@ npm start
 ```
 
 ## Libraries used
-[styled-components](https://www.styled-components.com)
-[re-base](https://github.com/tylermcginnis/re-base)
-[firebase](https://github.com/firebase/)
+* [styled-components](https://www.styled-components.com)
+* [re-base](https://github.com/tylermcginnis/re-base)
+* [firebase](https://github.com/firebase/)
