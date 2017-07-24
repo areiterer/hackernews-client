@@ -13,7 +13,7 @@ export function getItemUrl(itemId) {
 }
 
 export function getSourceUrl(url) {
-  const regex = /(?:https?:\/\/)?(?:www\.)?(.*?)\//;
+  const regex = /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\n]+)/;
   let match = regex.exec(url);
 
   if (!match) return "";
