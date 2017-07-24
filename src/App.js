@@ -3,6 +3,7 @@ import { injectGlobal } from "styled-components";
 
 import Api from "./api";
 import StoryList from "./containers/StoryList";
+import NavBar from "./components/NavBar";
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -55,7 +56,12 @@ class App extends Component {
   }
 
   render() {
-    return <StoryList items={this.state.newStories} />;
+    return (
+      <div>
+        <NavBar />
+        <StoryList items={this.state.newStories} />
+      </div>
+    );
   }
 }
 
