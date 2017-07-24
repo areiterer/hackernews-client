@@ -25,11 +25,9 @@ class NavBar extends Component {
   render() {
     return (
       <Wrapper>
-        <Brand>HNews</Brand>
+        <Brand href="/">HNews</Brand>
         <Menu isHidden={this.state.isMenuHidden}>
-          <MenuItem href="#">News</MenuItem>
-          <MenuItem href="#">Top</MenuItem>
-          <MenuItem href="#">Contact</MenuItem>
+          {/* <MenuItem href="#">News</MenuItem> */}
         </Menu>
         <MenuButton onClick={this.onToggleMenu} />
       </Wrapper>
