@@ -13,7 +13,7 @@ export default function Footer(props) {
       {props.score} point by
       <FooterLink href={userUrl}>{props.username}</FooterLink>
       |
-      <FooterLink href="#">8 minutes ago</FooterLink>
+      <FooterLink>{new Date(props.timestamp * 1000).toDateString()}</FooterLink>
       |
       <FooterLink href={itemUrl}>view on HackerNews</FooterLink>
     </FooterWrapper>
