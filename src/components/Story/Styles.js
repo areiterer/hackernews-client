@@ -20,7 +20,8 @@ export const RankContainer = styled.div`
 `;
 
 export const Title = styled.a.attrs({
-  target: "_blank"
+  target: "_blank",
+  rel: "noopener"
 })`
   color: #000000;
   text-decoration: none;
@@ -38,7 +39,8 @@ export const SourceContainer = styled.span`
 `;
 
 export const SourceLink = styled.a.attrs({
-  target: "_blank"
+  target: "_blank",
+  rel: "noopener"
 })`
   color: #828282;
   text-decoration: none;
@@ -55,7 +57,8 @@ export const FooterWrapper = styled.div`
 `;
 
 export const FooterLink = styled.a.attrs({
-  target: "_blank"
+  target: "_blank",
+  rel: "noopener"
 })`
   color: #828282;
   text-decoration: none;
