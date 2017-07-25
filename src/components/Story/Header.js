@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as utils from "../../utils";
+import * as utils from "../../utils/helper";
 
 import {
   HeaderWrapper,

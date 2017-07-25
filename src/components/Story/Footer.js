@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { FooterWrapper, FooterLink } from "./Styles";
-import * as utils from "../../utils";
+import * as utils from "../../utils/helper";
 
 export default function Footer(props) {
   const userUrl = utils.getUserUrl(props.username);
